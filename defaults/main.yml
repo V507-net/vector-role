@@ -19,13 +19,5 @@ vectorconfig:
         - transform_stdin
       compression: gzip
       database: logs
-      endpoint: http://{{ clickhouse }}:18123
+      endpoint: http://{{ clickhouse }}:8123
       table: logstable
-    my_sink_id_1:
-      type: test1
-      inputs:
-        - transform_stdin
-      compression: gzip
-      database: logs
-      table: logstable
-~                            

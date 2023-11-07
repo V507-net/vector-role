@@ -15,4 +15,3 @@ sinks:
     database: logs
     endpoint: http://{{ clickhouse }}:8123
     table: logstable
-
