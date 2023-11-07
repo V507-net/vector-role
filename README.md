@@ -33,8 +33,6 @@ vector_data_dir: "/var/lib/vector/"
             endpoint: http://{{ clickhouse }}:8123
             table: logstable
 
-Шаблон конфигурации Vector templates/vector_config.j2
-
 License
 -------
 
