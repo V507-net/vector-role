@@ -14,25 +14,24 @@ vector_data_dir: "/var/lib/vector/"
 Конфигруация Vector задается через переменные defaults
 /main.yml, например:
 
-    vectorconfig:
-      sources:
-        stdin_source:
-          type: stdin
-      transforms:
-        transform_stdin:
-          type: remap
-          inputs:
-            - stdin_source
-      sinks:
-        my_sink_id:
-          type: clickhouse
-          inputs:
-            - transform_stdin
-          compression: gzip
-          database: logs
-          endpoint: http://{{ clickhouse }}:8123
-          table: logstable
-
+      vectorconfig:
+        sources:
+          stdin_source:
+            type: stdin
+        transforms:
+          transform_stdin:
+            type: remap
+            inputs:
+              - stdin_source
+        sinks:
+          my_sink_id:
+            type: clickhouse
+            inputs:
+              - transform_stdin
+            compression: gzip
+            database: logs
+            endpoint: http://{{ clickhouse }}:8123
+            table: logstable
 
 Шаблон конфигурации Vector templates/vector_config.j2
 
