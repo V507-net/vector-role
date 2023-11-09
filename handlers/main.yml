@@ -1,4 +1,3 @@
-handlers:
-  - name: Start Vector
-    become: true
-    ansible.builtin.shell: "vector --config {{ vector_path }}/config/vector.toml"
+- name: Start Vector
+  become: true
+  ansible.builtin.shell: "vector --config {{ vector_path }}/config/vector.toml"
