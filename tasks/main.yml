@@ -53,4 +53,5 @@
           dest: "/etc/vector/config/vector.yaml"
           mode: 0755
           validate: vector validate --no-environment --config-yaml %s
+        notify: Start Vector
   notify: Start Vector
