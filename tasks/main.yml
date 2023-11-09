@@ -34,6 +34,12 @@
           src: "{{ vector_path }}/etc/systemd/vector.service"
           dest: "/etc/systemd/system/"
           remote_src: yes
+      - name: Enable service 
+        become: true
+        ansible.builtin.systemd:
+          name: vector
+          enabled: true
+          masked: no
       - name: Create data dir
         become: true
         file:

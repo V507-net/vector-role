@@ -1,3 +1,6 @@
 - name: Start Vector
   become: true
-  ansible.builtin.shell: "vector --config /etc/vector/config/vector.yaml"
+  ansible.builtin.service:
+    name: vector
+    state: restarted
+    enabled: yes
