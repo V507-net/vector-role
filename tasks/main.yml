@@ -44,13 +44,13 @@
         become: true
         file:
           state: directory
-          path: "/etc/vector"
+          path: "/etc/vector/config"
           mode: 0755
       - name: Configurate Vector
         tags: update_vector_conf
         ansible.builtin.template:
           src: vector_config.j2
-          dest: "{{ vector_path }}/config/vector.yaml"
+          dest: "/etc/vector/config/vector.yaml"
           mode: 0755
           validate: vector validate --no-environment --config-yaml %s
   notify: Start Vector
