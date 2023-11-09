@@ -3,6 +3,7 @@
 vector_version: "0.30.0"
 vector_path: "/opt/vector/"
 vector_data_dir: "/var/lib/vector/"
+clickhouse: 127.0.0.1
 vectorconfig:
   sources:
     stdin_source:

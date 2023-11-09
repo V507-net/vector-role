@@ -1,5 +1,7 @@
 ---
-# handlers file for vector-role
-- name: Start vector
+- name: Start Vector
   become: true
-  ansible.builtin.shell: "vector --config {{ vector_path }}/config/vector.toml"
+  ansible.builtin.service:
+    name: vector
+    state: restarted
+    enabled: yes
